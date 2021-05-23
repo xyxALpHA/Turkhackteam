@@ -1,4 +1,5 @@
 # coding=utf-8
+# ©xyxalpha - tht
 
 import os
 from bs4 import BeautifulSoup
@@ -51,12 +52,12 @@ while True:
     #                                                ##                                         #
     # |----------------------------------------|     ## 3-)sırayla port tara   4-)DDOS ATAK     #
     # | WEBSİTE : https://www.turkhackteam.org |     ##                                         # 
-    # |----------------------------------------|     ##                                         #                                 
-    #                                                ##      GUNCELLENEREK YENİ    ******       #
-    # |----------------------------------------|     ##                ÖZELLİKLER               #
-    # | TWİTTER :  xyxALpHA                    |     ##      ******          EKLENECEK          #
-    # |----------------------------------------|     ## ________________________________________#
-    #                                                ## son güncelleme: 13-05-2021    23:41     #
+    # |----------------------------------------|     ## 5-) ip bulucu          6-)Fuzzing       #                                 
+    #                                                ## 7-) zararlı ip         8-)whois sorgu   #
+    # |----------------------------------------|     ##      tespiti                            #
+    # | TWİTTER :  xyxALpHA                    |     ## 9-)dns sorgu          10-)ip sorgu      #
+    # |----------------------------------------|     ## ___________________________detaylı______#
+    #                                                ## son güncelleme: 12-05-2021    01:13     #
     #############################################################################################
     """
     #print(logo)
@@ -244,6 +245,84 @@ while True:
         for i in range(500):
             thread = threading.Thread(target=attack)
             thread.start()
+
+    elif soru == "5":
+       import socket
+       try:
+           aranacak_ıp = input(Fore.GREEN + "HEDEF URL GİRİNİZ: http://")
+           ip = socket.gethostbyname(aranacak_ıp)
+           print(ip)
+
+       except:
+           print(Fore.GREEN + "SUNUCU IP ADRESİNİ ENGELLEMİŞ OLABİLİR / BU İŞLEMİ GOOGLE VE DİGER BÜYÜK ŞİRKETLER\nİÇİN YAPIYORSANIZ BU HATA NORMAL")
+
+
+
+
+    elif soru == "6":
+
+
+        import fuzzing
+
+     
+
+    elif soru == "7":
+
+
+        
+        dosya = open("usom.txt","r")
+        icerik = dosya.read()
+        dosya.close()
+
+        ip =input(">>>[+]URL GİRİNİZ: ")
+        bugun = datetime.datetime.now()
+
+        if str(ip) in icerik:
+
+            yaz = "{} adresi zararlıdır !!\nTarih:{}".format(ip,bugun)
+            print(yaz)
+            kayit = input("Bu bilgiyi kaydetmek ister misiniz? [e]/[h]:")
+
+            if kayit == "e":
+
+                dosya = open("log.txt","a")
+                dosya.write(yaz)
+                dosya.close()
+                print("Bilgiler 'log.txt' dosyasına kaydedildi [*] ")
+            else:
+
+                print("Bilgileri kayıt işlemi iptal edildi [*]")
+
+
+        else:
+    
+            yaz = "{} adresi güvenli[*]\nTarih:{}".format(ip,bugun)
+            print(yaz)
+            kayit = input("Bu bilgiyi kaydetmek ister misiniz? [e]/[h]:")
+
+            if kayit == "e":
+
+                dosya = open("log.txt","a")
+                dosya.write(yaz)
+                dosya.close()
+                print("Bilgiler 'log.txt' dosyasına kaydedildi [*] ")
+            else:
+
+                print("Bilgileri kayıt işlemi iptal edildi [*]")
+
+    elif soru == "8":
+
+        import whois_sorgu
+
+    elif soru == "9":
+
+        import dns_sorgusu
+
+    elif soru == "10":
+
+        import ip_sorgusu
+
+	
 
 
 
