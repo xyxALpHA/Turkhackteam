@@ -37,32 +37,59 @@ logo = """
 	  | | |  _|   / _ \ | |\/| |------------------------------------------------/
 	  | | | |___ / ___ \| |  | |
 	  |_| |_____/_/   \_\_|  |_|
-		   M.Kemal ATATÜRK     v1.1.0                                                                                                                           
+		   M.Kemal ATATÜRK     v1.2.0                                                                                                                           
 """ 
-
- 
+b="""                                                                                  
+  |----------------------------------------| |----------------------------------------|
+  | YAPİMCİ :  xyxALpHA                    | | TWİTTER :  xyxALpHA                    |
+  |----------------------------------------| |----------------------------------------|
+  |----------------------------------------| |----------------------------------------|
+  | WEBSİTE : https://www.turkhackteam.org | | SON GÜNCELLEME: 12.06.2021 - 16:32     |
+  |----------------------------------------| |----------------------------------------|
+"""
 print(Fore.GREEN + Style.BRIGHT + logo + Style.RESET_ALL + Style.BRIGHT +"\n") 
+print(Fore.BLUE + Style.BRIGHT + b + Style.RESET_ALL + Style.BRIGHT +"\n")
 #print(logo)
 while True:
-    b="""                            
-    #############################################################################################                                                                               
-    # |----------------------------------------|     ##            ----KULLANIM----             #
-    # | YAPİMCİ :  xyxALpHA                    |     ##                                         #
-    # |----------------------------------------|     ## 1-)kaynak kod çek      2-)ağ port tara  #
-    #                                                ##                                         #
-    # |----------------------------------------|     ## 3-)sırayla port tara   4-)DDOS ATAK     #
-    # | WEBSİTE : https://www.turkhackteam.org |     ##                                         # 
-    # |----------------------------------------|     ## 5-) ip bulucu          6-)Fuzzing       #                                 
-    #                                                ## 7-) zararlı ip         8-)whois sorgu   #
-    # |----------------------------------------|     ##      tespiti                            #
-    # | TWİTTER :  xyxALpHA                    |     ## 9-)dns sorgu          10-)ip sorgu      #
-    # |----------------------------------------|     ## ___________________________detaylı______#
-    #                                                ## son güncelleme: 23-05-2021    20:20     #
-    #############################################################################################
+    example = """
+    ____________________________________________________________________________
+    |                       |                        |                         |
+    |                       |                        |                         |
+    | [1]Kaynak Kod Cek     |  [5]IP Adresi Bul      |  [9]DNS Sorgusu         |
+    |                       |                        |                         |
+    |                       |                        |                         |
+    | [2]Ag Port Tara       |  [6]Fuzzing            |  [10] IP Detaylı Sorgu  |
+    |                       |                        |                         |
+    |                       |                        |                         |
+    | [3]Sırayla Port Tara  |  [7]Zaralı Url Tespiti |  [11] reverse_shell     |
+    |                       |                        |       oluştur/dinle     |
+    |                       |                        |                         |
+    | [4]DDOS ATAK          |  [8]Whois Sorgusu      |                         |
+    |_______________________|________________________|_________________________|
+    
     """
+    
     #print(logo)
-    print(Fore.BLUE + Style.BRIGHT + b + Style.RESET_ALL + Style.BRIGHT +"\n")
+    about = """ 
+    TürkHackTeam ya da kısa adıyla THT, 2002 yılında "Arsenik" kod adlı hacker tarafından kurulmuş, 
+    Türkiye'nin en eski siber timlerinden biridir.
+    Türkiye'de siber güvenlik konusunda ofansif birçok saldırıda bulunmuştur.
+    Kendilerini Atatürkçü ve milliyetçi temele dayandıran Türk Hacker grubu olarak tanımlamaktadırlar. 
+    Bünyesinde birçok hack grubunu barındırmaktadır. 
+    Türk Hack Team, ismini ilk olarak ZoRRoKiN önderliğinde 
+    Microsoft menşeli MSN.COM'u hackleyerek duyurmuştur.
+      |----------------------------------------|  |----------------------------------------|
+      | WEBSİTE : https://www.turkhackteam.org |  | TWİTTER :  turkhackteam                |
+      |----------------------------------------|  |----------------------------------------|
+    """
+    
 
+    print(">>>[yardım]: THT --help]")
+    print(">>>[TURKHACKTEAM BİLGİ]: THT --about ")
+    print(">>>[cıkıs]: exit")
+    print("-----------------------------------")
+
+	
     soru = input(">>>[+]İSLEM NUMARASI GİRİNİZ:")
 
 
@@ -247,14 +274,64 @@ while True:
             thread.start()
 
     elif soru == "5":
-       import socket
-       try:
-           aranacak_ıp = input(Fore.GREEN + "HEDEF URL GİRİNİZ: http://")
-           ip = socket.gethostbyname(aranacak_ıp)
-           print(ip)
 
-       except:
-           print(Fore.GREEN + "SUNUCU IP ADRESİNİ ENGELLEMİŞ OLABİLİR / BU İŞLEMİ GOOGLE VE DİGER BÜYÜK ŞİRKETLER\nİÇİN YAPIYORSANIZ BU HATA NORMAL")
+        print(Fore.YELLOW+">>[-]TOPLU ARAMA: Bir 'txt' dosyasındaki hedefleri sorgulayın")
+        print(Fore.YELLOW+">>[-]TEK URL: Tek bir url sorgulayın")
+        print("-------------------------------------------")
+        karar = input("TOPLU ARAMA[t] / TEK URL[u] :")
+
+        import socket
+
+        if karar == "u" or karar == "U":
+            try:
+                aranacak_ıp = input(Fore.GREEN+">>>[+]HEDEF URL GİRİNİZ: http://")
+                ip = socket.gethostbyname(aranacak_ıp)
+                print(ip)
+
+            except:
+                print("SUNUCU IP ADRESİNİ ENGELLEMİŞ OLABİLİR / BU İŞLEMİ GOOGLE VE DİGER BÜYÜK ŞİRKETLER\nİÇİN YAPIYORSANIZ BU HATA NORMALDİR")
+
+
+
+        elif karar == "t" or karar == "T":
+
+
+            
+            print("[-]EXAMPLE: dosya 'txt' yolunu belirtiniz")
+            print(Fore.GREEN+"------------------------------------------")
+            dosyaismi = input(Fore.YELLOW+">>>[+]Dosya Yolu: ")
+            print("\n")
+            dosya = open(dosyaismi,"r")
+            oku = dosya.read()
+            dosya.close()
+
+
+
+
+
+            for sorgu in oku.splitlines():
+
+    
+                try:
+                    url = sorgu
+                    ip = socket.gethostbyname(url)
+
+                    print(sorgu," = ",ip)
+
+ 
+                except:
+
+
+                    print("\n")
+                    print(Fore.RED+"    >>[-HATALI SATIR TESPİT EDİLDİ-]")
+                    print(Fore.RED+"    >>Dosya içeriginde sadece domain isimleri olmalıdır!! [www.orneksite.com]\n    lütfen tam url girmeyiniz!")
+                    print(Fore.BLUE+"    >>[!]HATA NEDENİ: ",sorgu," sadece domain girilmelidir!"," bu satırı lütfen düzeltiniz!","\n")
+        
+        
+        
+
+            print("\n",dosyaismi,": icerisindeki hedeflere ait sonuclar..\n")
+    
 
 
 
@@ -323,10 +400,37 @@ while True:
         import ip_sorgusu
 
 	
+    elif soru == "11":
+
+        print("\n")
+        print(Fore.GREEN+"[1]DİNLE")
+        print("-------------")
+        print(Fore.GREEN+"[2]SHELL OLUŞTUR")
+        shell = input(">>>[+]İŞLEM NUMARASI SECİNİZ: ")
+
+        if shell == "1":
+
+            import shell_dinle
+
+        elif shell == "2":
+
+            import shell_create
 
 
+    elif soru == "THT --help":
 
+        print(Fore.BLUE+example)
 
+    elif soru == "THT --about":
+
+        print(about)
+
+    elif soru == "exit":
+
+        login = datetime.datetime.now()
+        print(Fore.GREEN+"[/]SON İSLEM: {}".format(login))
+        print(Fore.GREEN+"[*] cıkıs basarılı...")
+        break
 
     else:
 
@@ -337,6 +441,9 @@ while True:
     if dongu == "e":
         continue
     elif dongu == "h":
+        login = datetime.datetime.now()
+        print(Fore.GREEN+"[/]SON İSLEM: {}".format(login))
+        print(Fore.GREEN+"[*] cıkıs basarılı / Press Any Key To Continue...")
         break
 
 
